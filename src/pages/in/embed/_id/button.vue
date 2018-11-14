@@ -245,6 +245,8 @@ export default {
         this.likeCount += 1;
       }
       debouncedOnClick(this);
+      const logAction = this.isLoggedIn ? 'clickLikeLoggedIn' : 'clickLikeLoggedOut';
+      logTrackerEvent(this, 'LikeButtonFlow', logAction, logAction, 1);
     },
     onClickLikeStats() {
       const { id } = this.$route.params;
